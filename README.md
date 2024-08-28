@@ -22,41 +22,44 @@ Vamos colocar a mão na massa!
 
 Dentro da pasta, vc vai encontrar os seguintes arquivos, 2 powershell e 2 bat.
 
-![Title](imagens/1.jfif)
+![Title](imagens/1.png)
 
 **Explicação:** Os arquivos Powershell possuem o script para logar no e-mail e enviar o email, nele podemos ajustar para qual e-mail enviar, Nome do título, mensagem do e-mail etc...
 O Bat será utilizado para executar o script Powershell.
 
 Para visualizar ou editar, vc pode clicar com o botão direito do mouse e ir em editar.
 
-Vamos abrir o arquivo powershell Backup_problema.ps1
-Não foi fornecido texto alternativo para esta imagem
-Os próprios comentários do script já dizem tudo. 
-
-$emailSmtpServer = "email-ssl.com.br" É o servidor SSL do seu e-mail, no meu caso, eu coloquei o da Locaweb.
-
-$emailSmtpServerPort = "587"  Porta do Servidor SSL, coloque a porta que seu provedor de e-mail utiliza.
-
-$emailSmtpUser = "email_que_vai_enviar@algo.com" Coloque o e-mail que irá enviar a mensagem.
-
-$emailSmtpPass = "Senha_do_email" Senha do seu e-mail
-
-$emailMessage.From = "Título do E-mail <email_que_vai_enviar@algo.com>" Coloque o Título do e-mail e depois o email que vai enviar, conforme a imagem mostra.
-
-$emailMessage.To.Add( "email_que_vai_receber@algo.com" ) E-mail que vai receber os alertas.
-
-$emailMessage.Subject = "Assunto do Email" Assunto do e-mail.
-
-$emailMessage.Body = "Coloque a mensagem que preferir" Mensagem do e-mail.
-
-Pronto, só usar essas configurações e o script já será capaz de mandar e-mails. Se acaso não conseguir enviar, entre em contato com seu provedor de e-mail e peça os dados descritos.
+Vamos abrir o arquivo powershell *Backup_problema.ps1*
 
 ![Title](imagens/2.jfif)
 
+Não foi fornecido texto alternativo para esta imagem
+
+Os próprios comentários do script já dizem tudo. 
+
+**$emailSmtpServer** = "email-ssl.com.br" É o servidor SSL do seu e-mail, no meu caso, eu coloquei o da Locaweb.
+
+**$emailSmtpServerPort** = "587"  Porta do Servidor SSL, coloque a porta que seu provedor de e-mail utiliza.
+
+**$emailSmtpUser** = "email_que_vai_enviar@algo.com" Coloque o e-mail que irá enviar a mensagem.
+
+**$emailSmtpPass** = "Senha_do_email" Senha do seu e-mail
+
+**$emailMessage.From** = "Título do E-mail <email_que_vai_enviar@algo.com>" Coloque o Título do e-mail e depois o email que vai enviar, conforme a imagem mostra.
+
+**$emailMessage.To.Add** =( "email_que_vai_receber@algo.com" ) E-mail que vai receber os alertas.
+
+**$emailMessage.Subject** = "Assunto do Email" Assunto do e-mail.
+
+**$emailMessage.Body** = "Coloque a mensagem que preferir" Mensagem do e-mail.
+
+Pronto, só usar essas configurações e o script já será capaz de mandar e-mails. Se acaso não conseguir enviar, entre em contato com seu provedor de e-mail e peça os dados descritos.
+
+![Title](imagens/3.jfif)
+
 **5º - Agora que preenchermos o script Backup_problema.ps1 com seus dados, faça o mesmo com o Backup_ok.ps1, mude só a mensagem para SUCESSO ou algo que preferir.**
 
-TESTE
-Vamos realizar um teste, preenchi meu script com minhas informações e mensagem do e-mail. Vamos supor que meu backup apresentou um erro, se eu aperta o botão de Play, o script terá que executar e mandar um e-mail para o destinatário. Vamos testar.
+**Vamos realizar um teste, preenchi meu script com minhas informações e mensagem do e-mail. Vamos supor que meu backup apresentou um erro, se eu aperta o botão de Play, o script terá que executar e mandar um e-mail para o destinatário. Vamos testar.**
 
 1º - Aperte o botão Verde de play
 
