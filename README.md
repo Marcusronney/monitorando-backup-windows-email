@@ -1,6 +1,6 @@
 # monitorando-backup-windows-email
 Monitorando Backup via E-mail no Windows Server
-![Title](images/logo.jfif)
+![Title](imagens/logo.jfif)
 
 A segurança da informação é essencial para garantir a confiabilidade, integridade e disponibilidade da infraestrutura de qualquer empresa. Um sistema de backup eficiente é o mínimo esperado em qualquer ambiente corporativo.
 
@@ -22,7 +22,7 @@ Vamos colocar a mão na massa!
 
 Dentro da pasta, vc vai encontrar os seguintes arquivos, 2 powershell e 2 bat.
 
-![Title](images/1.jfif)
+![Title](imagens/1.jfif)
 
 **Explicação:** Os arquivos Powershell possuem o script para logar no e-mail e enviar o email, nele podemos ajustar para qual e-mail enviar, Nome do título, mensagem do e-mail etc...
 O Bat será utilizado para executar o script Powershell.
@@ -51,7 +51,7 @@ $emailMessage.Body = "Coloque a mensagem que preferir" Mensagem do e-mail.
 
 Pronto, só usar essas configurações e o script já será capaz de mandar e-mails. Se acaso não conseguir enviar, entre em contato com seu provedor de e-mail e peça os dados descritos.
 
-![Title](images/2.jfif)
+![Title](imagens/2.jfif)
 
 **5º - Agora que preenchermos o script Backup_problema.ps1 com seus dados, faça o mesmo com o Backup_ok.ps1, mude só a mensagem para SUCESSO ou algo que preferir.**
 
@@ -60,15 +60,15 @@ Vamos realizar um teste, preenchi meu script com minhas informações e mensagem
 
 1º - Aperte o botão Verde de play
 
-![Title](images/2.jfif)
+![Title](imagens/2.jfif)
 
 2º - Se no console não apresentar nenhuma mensagem de erro, o e-mail foi enviado com sucesso, vamos verificar!
 
-![Title](images/3.jfif)
+![Title](imagens/3.jfif)
 
 3º - E-mail Recebido com sucesso, faça o teste com os 2 arquivos.
 
-![Title](images/4.jfif)
+![Title](imagens/4.jfif)
 
 Agora vamos a última etapa.
 
@@ -78,14 +78,14 @@ Vamos verificar os arquivos .bat
 
 Abra os arquivos com algum editor de texto, eles têm que estar conforma a imagem abaixo. Caso mude a pasta Script para outro loca, deverá alterar a URL dos arquivos.
 
-![Title](images/5.jfif)
+![Title](imagens/5.jfif)
 .bat ok, vamos agora criar as tarefas.
 
 1º - Abra o Agendador de tarefas ( Task Scheduler)
 
 2º - Vá em Biblioteca do Agendador ( Task Scheduler) e depois click em Criar Tarefa (Create Task)
 
-![Title](images/6.jfif)
+![Title](imagens/6.jfif)
 
 3º - Vamos criar 2 tarefas, 1 para mandar o e-mail de backup sucesso e outra com o e-mail backup error.
 
@@ -97,7 +97,7 @@ Marque Executar com privilégios mais altos
 
 em Configurar para: Coloque o Seu S.O
 
-![Title](images/7.jfif)
+![Title](imagens/7.jfif)
 
 4º - Click em Disparadores
 Iniciar a tarefa: escolha Em um Evento
@@ -105,7 +105,7 @@ Log: escolha Microsoft-Windows-Backup/Operacional
 Origem: Backup
 Id do evento: 4
 
-![Title](images/8.jfif)
+![Title](imagens/8.jfif)
 
 Quando o Windows realiza o backup, ele emite um evento de ID 4, por isso iremos utiliza-lo. Assim, sempre que que o sistema ler o ID 4, irá disparar a task, a task vai executar o .bat que irá executar o PowerShell e mandar o e-mail.
 
@@ -114,21 +114,21 @@ Escolha Ação: Iniciar um programa
 Em Procurar, navegue até pasta Scripts e escolha o Arquivo Backup_ok.bat
 Em Start, coloque C:\Scripts
 
-![Title](images/9.jfif)
+![Title](imagens/9.jfif)
 
 6º - Em Condições, Desmarque todas as opções.
 
-![Title](images/10.jfif)
+![Title](imagens/10.jfif)
 
 7º - Em Configurações, Marque somente Permitir que a tarefa seja executada por demanda.
 E escolha Executar uma nova instância em paralelo
 
-![Title](images/11.jfif)
+![Title](imagens/11.jfif)
 
 Tudo configurado, de OK e Pronto, Ação configurada.
 Para testar, basta ir na tarefa e escolha a opção Executar (RUN) e logo em seguida verifica o e-mail! =)
 
-![Title](images/12.jfif)
+![Title](imagens/12.jfif)
 
 Agora que configuramos a taks para envio do Backup_ok, vamos configurar o Backup_problema.
 Vamos fazer simplesmente a mesma coisa da última etapa.
@@ -146,7 +146,7 @@ Quando um Backup apresenta algum erro, esse erro pode ser de diferentes fatores,
 Ids utilizados para problema: 5, 19, 9, 49, 517, 561, 20.
 Adicione todos os Disparadores da mesma forma, alterando somente os Ids, até ficar assim:
 
-![Title](images/13.jfif)
+![Title](imagens/13.jfif)
 
 Feito isso, continue configurando a TAKS da mesma forma que fizemos na outra TAKS.
 4º - Ações, click em NOVO 
