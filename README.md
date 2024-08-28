@@ -60,15 +60,15 @@ Vamos realizar um teste, preenchi meu script com minhas informações e mensagem
 
 1º - Aperte o botão Verde de play
 
-![Title](imagens/2.jfif)
+![Title](imagens/3.jfif)
 
 2º - Se no console não apresentar nenhuma mensagem de erro, o e-mail foi enviado com sucesso, vamos verificar!
 
-![Title](imagens/3.jfif)
+![Title](imagens/4.jfif)
 
 3º - E-mail Recebido com sucesso, faça o teste com os 2 arquivos.
 
-![Title](imagens/4.jfif)
+![Title](imagens/5.jfif)
 
 Agora vamos a última etapa.
 
@@ -78,14 +78,14 @@ Vamos verificar os arquivos .bat
 
 Abra os arquivos com algum editor de texto, eles têm que estar conforma a imagem abaixo. Caso mude a pasta Script para outro loca, deverá alterar a URL dos arquivos.
 
-![Title](imagens/5.jfif)
+![Title](imagens/6.jfif)
 .bat ok, vamos agora criar as tarefas.
 
 1º - Abra o Agendador de tarefas ( Task Scheduler)
 
 2º - Vá em Biblioteca do Agendador ( Task Scheduler) e depois click em Criar Tarefa (Create Task)
 
-![Title](imagens/6.jfif)
+![Title](imagens/7.jfif)
 
 3º - Vamos criar 2 tarefas, 1 para mandar o e-mail de backup sucesso e outra com o e-mail backup error.
 
@@ -97,7 +97,7 @@ Marque Executar com privilégios mais altos
 
 em Configurar para: Coloque o Seu S.O
 
-![Title](imagens/7.jfif)
+![Title](imagens/8.jfif)
 
 4º - Click em Disparadores
 Iniciar a tarefa: escolha Em um Evento
@@ -105,7 +105,7 @@ Log: escolha Microsoft-Windows-Backup/Operacional
 Origem: Backup
 Id do evento: 4
 
-![Title](imagens/8.jfif)
+![Title](imagens/9.jfif)
 
 Quando o Windows realiza o backup, ele emite um evento de ID 4, por isso iremos utiliza-lo. Assim, sempre que que o sistema ler o ID 4, irá disparar a task, a task vai executar o .bat que irá executar o PowerShell e mandar o e-mail.
 
@@ -114,21 +114,21 @@ Escolha Ação: Iniciar um programa
 Em Procurar, navegue até pasta Scripts e escolha o Arquivo Backup_ok.bat
 Em Start, coloque C:\Scripts
 
-![Title](imagens/9.jfif)
+![Title](imagens/10.jfif)
 
 6º - Em Condições, Desmarque todas as opções.
 
-![Title](imagens/10.jfif)
+![Title](imagens/11.jfif)
 
 7º - Em Configurações, Marque somente Permitir que a tarefa seja executada por demanda.
 E escolha Executar uma nova instância em paralelo
 
-![Title](imagens/11.jfif)
+![Title](imagens/12.jfif)
 
 Tudo configurado, de OK e Pronto, Ação configurada.
 Para testar, basta ir na tarefa e escolha a opção Executar (RUN) e logo em seguida verifica o e-mail! =)
 
-![Title](imagens/12.jfif)
+![Title](imagens/13.jfif)
 
 Agora que configuramos a taks para envio do Backup_ok, vamos configurar o Backup_problema.
 Vamos fazer simplesmente a mesma coisa da última etapa.
@@ -146,7 +146,7 @@ Quando um Backup apresenta algum erro, esse erro pode ser de diferentes fatores,
 Ids utilizados para problema: 5, 19, 9, 49, 517, 561, 20.
 Adicione todos os Disparadores da mesma forma, alterando somente os Ids, até ficar assim:
 
-![Title](imagens/13.jfif)
+![Title](imagens/14.jfif)
 
 Feito isso, continue configurando a TAKS da mesma forma que fizemos na outra TAKS.
 4º - Ações, click em NOVO 
