@@ -63,15 +63,15 @@ Pronto, só usar essas configurações e o script já será capaz de mandar e-ma
 
 **Vamos realizar um teste, preenchi meu script com minhas informações e mensagem do e-mail. Vamos supor que meu backup apresentou um erro, se eu aperta o botão de Play, o script terá que executar e mandar um e-mail para o destinatário. Vamos testar.**
 
-1º - Aperte o botão Verde de play
+**1º - Aperte o botão Verde de play**
 
 ![Title](imagens/4.jfif)
 
-2º - Se no console não apresentar nenhuma mensagem de erro, o e-mail foi enviado com sucesso, vamos verificar!
+**2º - Se no console não apresentar nenhuma mensagem de erro, o e-mail foi enviado com sucesso, vamos verificar!**
 
 ![Title](imagens/6.jfif)
 
-3º - E-mail Recebido com sucesso, faça o teste com os 2 arquivos.
+**3º - E-mail Recebido com sucesso, faça o teste com os 2 arquivos.**
 
 ![Title](imagens/6.jfif)
 
@@ -86,21 +86,19 @@ Abra os arquivos com algum editor de texto, eles têm que estar conforma a image
 ![Title](imagens/7.jfif)
 .bat ok, vamos agora criar as tarefas.
 
-1º - Abra o Agendador de tarefas ( Task Scheduler)
+**1º - Abra o Agendador de tarefas ( Task Scheduler)**
 
-2º - Vá em Biblioteca do Agendador ( Task Scheduler) e depois click em Criar Tarefa (Create Task)
+**2º - Vá em Biblioteca do Agendador ( Task Scheduler) e depois click em Criar Tarefa (Create Task)**
 
 ![Title](imagens/8.jfif)
 
-3º - Vamos criar 2 tarefas, 1 para mandar o e-mail de backup sucesso e outra com o e-mail backup error.
+**3º - Vamos criar 2 tarefas, 1 para mandar o e-mail de backup sucesso e outra com o e-mail backup error.**
 
-Vamos por o nome da tarefa de Notificação Backup Sucesso
+Vamos por o nome da tarefa de *Notificação Backup Sucesso*.
 
-Marque Executar estando com usuário conectado ou não
+Marque Executar estando com usuário conectado ou não.
 
-Marque Executar com privilégios mais altos
-
-em Configurar para: Coloque o Seu S.O
+Marque Executar com privilégios mais altos em Configurar para: Coloque o Seu S.O
 
 ![Title](imagens/9.jfif)
 
@@ -114,19 +112,18 @@ Id do evento: 4
 
 Quando o Windows realiza o backup, ele emite um evento de ID 4, por isso iremos utiliza-lo. Assim, sempre que que o sistema ler o ID 4, irá disparar a task, a task vai executar o .bat que irá executar o PowerShell e mandar o e-mail.
 
-5º - Em Ação.
+**5º - Em Ação.**
 Escolha Ação: Iniciar um programa
 Em Procurar, navegue até pasta Scripts e escolha o Arquivo Backup_ok.bat
 Em Start, coloque **C:\Scripts**
 
 ![Title](imagens/11.jfif)
 
-6º - Em Condições, Desmarque todas as opções.
+**6º - Em Condições, Desmarque todas as opções.**
 
 ![Title](imagens/12.jfif)
 
-7º - Em Configurações, Marque somente Permitir que a tarefa seja executada por demanda.
-E escolha Executar uma nova instância em paralelo
+**7º - Em Configurações, Marque somente Permitir que a tarefa seja executada por demanda. E escolha Executar uma nova instância em paralelo.**
 
 ![Title](imagens/13.jfif)
 
@@ -140,16 +137,16 @@ Vamos fazer simplesmente a mesma coisa da última etapa.
 
 1º - **Criar Tarefa**
 
-2º - Guia Geral, vamos por o nome de Notificação ERROR Backup.
-Marque a opção Executar estando o usuário conectado ou não, marque também Executar com privilégios mais altos. em Configurar Para: coloque o seu S.O.
+**2º - Guia Geral, vamos por o nome de Notificação ERROR Backup.
+Marque a opção Executar estando o usuário conectado ou não, marque também Executar com privilégios mais altos. em Configurar Para: coloque o seu S.O.**
 
-3º - Disparadores.
+**3º - Disparadores.**
 
 Iniciar a tarefa: Em um Evento.
 Log: *Microsoft-Windows-Backup/Operacional*
 id do evento: 5
 
-De OK para salvar
+De *OK* para salvar
 
 Agora, teremos que adicionar mais Disparadores.
 
